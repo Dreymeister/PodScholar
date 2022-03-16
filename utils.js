@@ -28,11 +28,11 @@ renderNavBar = () => {
             		Hello, ${localStorage.getItem(LOCAL_STORAGE_FIRST_NAME)} ${localStorage.getItem(LOCAL_STORAGE_LAST_NAME)}
             	</button>
             	<div class="dropdown-menu" aria-labelledby="dropdownMenu">
-            		<button class="w-100 dropdown-item"><a href="dashboard.html">Dashboard</a></button>
-            		<button class="w-100 dropdown-item"><a href="rules.html">Rules</a></button>
-            		<button class="w-100 dropdown-item"><a href="howtoupload.html">How to upload?</a></button>
-            		<button class="w-100 dropdown-item"><a href="upload.html">Upload now!</a></button>
-					<button class="w-100 dropdown-item"><a onclick="logOut()">Log out</a></button>
+            		<a href="dashboard.html"><button class="w-100 dropdown-item">Dashboard</button></a>
+            		<a href="rules.html"><button class="w-100 dropdown-item">Rules</button></a>
+            		<a href="howtoupload.html"><button class="w-100 dropdown-item">How to upload?</button></a>
+            		<a href="upload.html"><button class="w-100 dropdown-item">Upload now!</a></button></a>
+					<a onclick="logOut()"><button class="w-100 dropdown-item">Log out</button></a>
 				</div>
             </li>
         </ul>
