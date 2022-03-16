@@ -46,3 +46,13 @@ logOut = () => {
 
 	window.location.href = "login.html"
 }
+
+addSearchFunctionToSearchBar = (id) => {
+	let sb = $(`#${id}`)
+
+	sb.on("keypress", (e) => {
+		if(e.keyCode === 13) {
+			
+		}
+	})
+}
