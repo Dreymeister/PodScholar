@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Upload Podcast - PodScholar</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css" integrity="sha512-wJgJNTBBkLit7ymC6vvzM1EcSWeM9mmOu+1USHaRBbHkm6W9EgM0HY27+UtUaprntaYQJF75rc8gjxllKs5OIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="about.html">PodScholar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" id="menuCollapse">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse mt-1" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="login.html">Login</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="registerauthor.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="masthead" style="background-image: url('assets/img/what-is-podcast.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Upload Podcast</h1>
+                            <span class="subheading">Complete the form to upload your podcast!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="my-5">
+                            <form id="registerAuthorAccountForm" data-sb-form-api-token="API_TOKEN">
+                                <div class="form-floating">
+                                    <input class="form-control" id="firstName" type="text" placeholder="Enter your first name..." data-sb-validations="required" />
+                                    <label for="firstName">First Name *</label>
+                                    <div class="invalid-feedback" data-sb-feedback="firstName:required">Your first name is required.</div>
+                                </div>
+                                <br>
+                                <div class="form-floating">
+                                    <input class="form-control" id="lastName" type="text" placeholder="Enter your last name..." data-sb-validations="required" />
+                                    <label for="lastName">Last Name *</label>
+                                    <div class="invalid-feedback" data-sb-feedback="lastName:required">Your last name is required.</div>
+                                </div>
+                                <br>
+                                <div class="form-floating">
+                                    <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
+                                    <label for="email">Email address *</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                </div>
+                                <br>
+                                <div class="form-floating">
+                                    <input class="form-control" id="articleTitle" type="text" placeholder="Enter the article title" data-sb-validations="required" />
+                                    <label for="articleTitle">Article Title *</label>
+                                    <div class="invalid-feedback" data-sb-feedback="articleTitle:required">Your article title is required.</div>
+                                </div>
+                                <br>
+                                <div class="form-floating">
+                                    <input class="form-control" id="journal" type="text" placeholder="Enter your journal link" data-sb-validations="required" />
+                                    <label for="journal">Journal *</label>
+                                    <div class="invalid-feedback" data-sb-feedback="journal:required">Your journal URL is required.</div>
+                                </div>
+                                <br>
+                                <div class="form-floating">
+                                    <input class="form-control" id="publishDate" type="text" placeholder="Enter the publish date" data-sb-validations="required" />
+                                    <label for="publishDate">Publish Date *</label>
+                                    <div class="invalid-feedback" data-sb-feedback="publishDate:required">Your publish date is required</div>
+                                </div>
+                                <br>
+                                <div class="form-floating">
+                                    <input class="form-control" id="doi" type="text" placeholder="Enter DOI number" data-sb-validations="required" />
+                                    <label for="doi">DOI# *</label>
+                                    <div class="invalid-feedback" data-sb-feedback="doi:required">Your DOI number is required.</div>
+                                </div>
+                                <br>
+                                <div class="form-floating">
+                                    <input class="form-control" id="keywords" type="text" placeholder="Enter 3-6 Keywords to increase search optimization" data-sb-validations="required" />
+                                    <label for="keywords">Search Optimization (At least 1 keyword is required)*</label>
+                                    <div class="invalid-feedback" data-sb-feedback="keywords:required">At least 1 keyword is required</div>
+                                </div>
+                                <br>
+                                <div class="form-floating">
+                                    <input class="form-control" id="podcastFile" type="file" placeholder="Select your podcast file" data-sb-validations="required" />
+                                    <label for="podcastFile"></label>
+                                    <div class="invalid-feedback" data-sb-feedback="podcastFile:required">Your podcast file is required.</div>
+                                </div>
+                                <br>
+                                <span for="termsConditions">Terms and conditions *</span>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" id="termsConditions" type="checkbox" />
+                                    <label class="form-check-label" for="termsConditions">I accept to the terms and conditions of PodScholar</label>
+                                </div>
+                                <br>
+                                <div class="d-none" id="submitSuccessMessage"></div>
+                                <div class="d-none" id="submitErrorMessage"></div>
+                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+       
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js" integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/scripts.js"></script>
+        <script src="jsoninteractions.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="middleware.js"></script>
+        <script src="utils.js"></script>
+        <script>
+            window.onload = (e) => {
+                if(!isUserLoggedIn()) {
+                    window.location.href = "login.html?error_code=LOGIN_FIRST"
+                }
+            }
+            $("#submitButton").off("click")
+            $("#submitButton").on("click", (e) => {
+                e.preventDefault()
+                e.stopImmediatePropagation()
+
+                $.toast({
+                    heading: "Sorry, at this time, we are not supporting for uploading mp3 and mp3 directly!",
+                    text: "Please try to upload at uploadbyurl.html",
+                    showHideTransition: "slide",
+                    icon: "warning"
+                })
+            })
+
+            renderNavBar()
+        </script>
+    </body>
+</html>
