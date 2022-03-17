@@ -154,7 +154,6 @@ searchByKeyword = (feedId, keyword, database) => {
 		const condition = pc.firstName.includes(keyword) || pc.lastName.includes(keyword) 
 			|| pc.keywords.includes(keyword) || pc.publishDate.includes(keyword) 
 			|| pc.doi.includes(keyword)
-		console.log(keyword)
 		if(!condition) continue
 		feed.append(`
 			<div class="col-12 mb-3">
