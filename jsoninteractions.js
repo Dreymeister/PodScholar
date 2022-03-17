@@ -145,3 +145,38 @@ createFeed = (feedId, database) => {
 
 	$.LoadingOverlay("hide")
 }
+
+
+searchByKeyword = (feedId, keyword, database) => {
+	let feed = $(`#${feedId}`)
+	for(let i = 0; i < database.podcasts.length; i++) {
+		let pc = database.podcasts[i]
+		const condition = pc.firstName.includes(keyword) || pc.lastName.includes(keyword) 
+			|| pc.keywords.includes(keyword) || pc.publishDate.includes(keyword) 
+			|| pc.doi.includes(keyword)
+		console.log(keyword)
+		if(!condition) continue
+		feed.append(`
+			<div class="col-12 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Test
+                        </h5>
+                        <p class="card-text m-0">Author: ${pc.firstName} ${pc.lastName}</p>
+                        <p class="card-text m-0">Tags: ${pc.keywords}</p>
+                        <p class="card-text m-0">Published date: ${pc.publishDate}</p>
+                        <p class="card-text m-0">DOI: ${pc.doi}</p>
+                    </div>
+                    <div class="card-footer">
+                        <audio controls>
+                            <source src="${pc.url}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+		`)
+	}
+
+	$.LoadingOverlay("hide")
+}

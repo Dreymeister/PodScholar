@@ -76,7 +76,7 @@
                           <input type="text" class="form-control" id="searchBar">
                         </div>
 
-                        <h5 class="mt-3 mb-3">Recent uploads</h5>
+                        <h5 class="mt-3 mb-3">Search Results</h5>
                         <small class="mb-3">Attention: This is a demo, therefore, some functions have been not implemented yet.</small>
 
                         <!-- feed goes here -->
@@ -100,7 +100,14 @@
         <script src="middleware.js"></script>
         <script src="utils.js"></script>
         <script>
-            getDatabaseAndDo(createFeed, ["feed"])
+            addSearchFunctionToSearchBar("feed", "searchBar")
+
+            const params = getParams()
+
+            if(params.keyword) {
+                $("#searchBar").val(params.keyword)
+                getDatabaseAndDo(searchByKeyword, ["feed", $("#searchBar").val()])
+            }
         </script>
     </body>
 </html>

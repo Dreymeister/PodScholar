@@ -47,12 +47,12 @@ logOut = () => {
 	window.location.href = "login.html"
 }
 
-addSearchFunctionToSearchBar = (id) => {
+addSearchFunctionToSearchBar = (feedId, id) => {
 	let sb = $(`#${id}`)
 
 	sb.on("keypress", (e) => {
 		if(e.keyCode === 13) {
-			
+			getDatabaseAndDo(searchByKeyword, [feedId, sb.val()])
 		}
 	})
 }
