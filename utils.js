@@ -28,6 +28,7 @@ renderNavBar = () => {
             		Hello, ${localStorage.getItem(LOCAL_STORAGE_FIRST_NAME)} ${localStorage.getItem(LOCAL_STORAGE_LAST_NAME)}
             	</button>
             	<div class="dropdown-menu" aria-labelledby="dropdownMenu">
+            		<a href="home.html"><button class="w-100 dropdown-item">Home</button></a>
             		<a href="dashboard.html"><button class="w-100 dropdown-item">Dashboard</button></a>
             		<a href="rules.html"><button class="w-100 dropdown-item">Rules</button></a>
             		<a href="howtoupload.html"><button class="w-100 dropdown-item">How to upload?</button></a>

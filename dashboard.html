@@ -75,7 +75,6 @@
                         </div>
                         <div class="row w-100 mt-3" id="savedPodcasts">
                             <h4>Saved Podcasts</h4>
-                            <small>We're working on this.</small>
                         </div>
                         <div class="row w-100 mt-3" id="billing">
                             <h4>Billing</h4>
@@ -123,19 +122,57 @@
                 `)
 
                 renderCurrentUserUploadedPodcasts(email, database)
+                renderCurrentUserSavedPodcasts(email, database)
                 $.LoadingOverlay("hide")
             }
 
             renderCurrentUserUploadedPodcasts = (email, database) => {
                 const podcasts = database.users[email].uploadedPodCasts
+                const pdInDB = database.podcasts
+
                 for(let i = 0; i < podcasts.length; i++) {
-                    let pc = podcasts[i]
+                    let id = podcasts[i]
+                    let pc = pdInDB[id]
                     $("#uploadedPodcasts").append(`
                         <div class="col-12 mb-3">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">
-                                        Test
+                                        ${pc.articleTitle}
+                                    </h5>
+                                    <p class="card-text m-0">Author: ${pc.firstName} ${pc.lastName}</p>
+                                    <p class="card-text m-0">Tags: ${pc.keywords}</p>
+                                    <p class="card-text m-0">Published date: ${pc.publishDate}</p>
+                                    <p class="card-text m-0">DOI: ${pc.doi}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <audio controls>
+                                        <source src="${pc.url}" type="audio/mpeg">
+                                    </audio>
+                                </div>
+                            </div>
+                        </div>
+                    `)
+                }
+            }
+
+            renderCurrentUserSavedPodcasts = (email, database) => {
+                const podcasts = database.users[email].savedPodCasts
+                if(podcasts.length == 0) {
+                    $("#savedPodcasts").append("<small>You haven't saved any podcasts yet.</small>")
+                    return
+                }
+                const pdInDB = database.podcasts
+
+                for(let i = 0; i < podcasts.length; i++) {
+                    let id = podcasts[i]
+                    let pc = pdInDB[id]
+                    $("#savedPodcasts").append(`
+                        <div class="col-12 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        ${pc.articleTitle}
                                     </h5>
                                     <p class="card-text m-0">Author: ${pc.firstName} ${pc.lastName}</p>
                                     <p class="card-text m-0">Tags: ${pc.keywords}</p>
